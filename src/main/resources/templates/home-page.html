@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Reference Google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+	<!-- Reference Bootstrap and local files -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" th:href="@{css/slick.css}">
+	<link rel="stylesheet" th:href="@{css/slick-theme.css}">
+	<link rel="stylesheet" th:href="@{css/home.css}">
+	<link rel="icon" th:href="@{images/header/white-logo.png}">
+
+	<title>Quản Lí Khách Sạn</title>
+</head>
+
+<body>
+
+	<div class="main-overlay js-main-overlay"></div>
+
+	<!-- Main Cover Section -->
+	<section class="cover-main" id="home">
+		<header>
+			<nav class="nav-wrapper">
+				<div class="logo">
+					<a href="#"> <img src="images/header/white-logo.png" class="logo">
+					</a>
+				</div>
+
+				<!-- Menu bar -->
+				<ul class="menu">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#work">Rooms</a></li>
+					<li><a href="#about">Services</a></li>
+					<li><a href="#slider">Review</a></li>
+					<li><a href="#footer">About Me</a></li>
+					<li><a href="adminController">Admin</a></li>
+				</ul>
+			</nav>
+			<div class="menu-trigger js-menu-trigger"></div>
+		</header>
+
+		<!-- Main buttons and title -->
+		<div class="wrapper">
+			<ul id="scene" data-invert-x="false" data-invert-y="false" data-scalar-x="7" data-scalar-y="7"
+				data-friction-x="0.1" data-friction-y="0.1" data-origin-x="0.5" data-origin-y="0.5">
+				<li class="layer name" data-depth="0.90">Đặt chỗ khách sạn</li>
+				<li class="layer title" data-depth="0.50">Đặt trực tuyến</li>
+				<li class="layer btn btn-main" data-depth="0.30"><a th:href="@{/new-reservation}"
+						class="reservation-btn">
+						Đặt phòng mới</a> <a th:href="@{/your-reservations}" class="reservations-btn">
+						phòng bạn đặt</a> <br> <a th:href="@{/logout}" class="logout-btn">Đăng xuất</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!--Room Cards Section -->
+	<section class="section-padding" id="work">
+		<h2 class="sub-title">Phòng Khách sạn</h2>
+		<div class="container-rooms">
+			<div class="row-room">
+
+				<!-- Single room card -->
+				<div class="col-md-4 col-sm-6">
+					<div class="col-xs-12 fix_p_r">
+						<div class="slide-item card" style="padding: 10px;">
+							<h3>Phòng đơn:</h3>
+							<img src="images/rooms/single.jpg">
+
+							<p>
+								Phòng đơn <br> Với bữa sáng miễn phí cho một hoặc hai người
+											bắt đầu từ  50$  cho đêm lên đến  199$ .
+							</p>
+
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Double room card -->
+				<div class="col-md-4 col-sm-6">
+					<div class="col-xs-12 fix_p_r">
+						<div class="slide-item card" style="padding: 10px;">
+							<h3>Phòng đôi:</h3>
+							<img src="images/rooms/family.jpg">
+
+							<p>
+								Phòng đôi <br> Với bữa sáng miễn phí cho ba người hoặc
+										bốn bắt đầu từ  100$  cho đêm lên đến  299$ .
+							</p>
+
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Family room card -->
+				<div class="col-md-4 col-sm-6">
+					<div class="col-xs-12 fix_p_r">
+						<div class="slide-item card" style="padding: 10px;">
+							<h3>Phòng gia đình:</h3>
+							<img src="images/rooms/double.jpg">
+
+							<p>
+								Phòng gia đình <br> Với bữa sáng miễn phí cho bốn người hoặc
+										năm bắt đầu từ  130$ cho đêm lên đến 329$ .
+							</p>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Honeymoon room card -->
+				<div class="col-md-4 col-sm-6">
+					<div class="col-xs-12 fix_p_r">
+						<div class="slide-item card" style="padding: 10px;">
+							<h3>Phòng trăng mật:</h3>
+							<img src="images/rooms/suite.jpg">
+
+							<p>
+								Phòng trăng mật <br> Với bữa sáng và sẵn sàng cho bất kỳ
+													bất ngờ và thiết bị tùy chỉnh và bắt đầu từ  100$ cho
+													đêm lên đến 499$.
+							</p>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Services Section -->
+	<section class="services-sec" id="about">
+		<div class="wrapper">
+			<h2 class="sub-title">Cơ sở và dịch vụ</h2>
+
+			<!-- room services and breakfast (up row) -->
+			<section class="tm-service-section">
+				<div class="tm-service">
+					<img class="tm-ser-image" src="images/service/bell.png">
+					<div>
+						<p class="b">Dịch vụ phòng</p>
+						<p>Tận hưởng kỳ nghỉ của bạn với dịch vụ phòng tuyệt vời và kịp thời</p>
+					</div>
+				</div>
+
+				<div class="tm-service">
+					<img class="tm-ser-image" src="images/service/coffee.png">
+					<div>
+						<p class="b">Bữa sáng miễn phí</p>
+						<p>tận hưởng bữa sáng miễn phí hàng ngày</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- parking services and spa (down row) -->
+			<section class="tm-service-section">
+
+				<div class="tm-service">
+					<img class="tm-ser-image" src="images/service/car-front.jpg">
+					<div>
+						<p class="b">Bãi đỗ xe miễn phí</p>
+						<p>Không cần phải trả thêm bất kỳ khoản phí nào để đậu xe</p>
+					</div>
+				</div>
+
+				<div class="tm-service">
+					<img class="tm-ser-image" src="images/service/spa.png">
+					<div>
+						<p class="b">Spa miễn phí</p>
+						<p>Thư giãn tại Spa trong nhà một lần mỗi ngày trong kỳ nghỉ của bạn</p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</section>
+
+	<!-- Slider Section -->
+	<div class="slider-div" id="slider">
+		<h2 class="sub-title">Đánh giá khách sạn</h2>
+		<div class="slider">
+			<!-- slide collection images -->
+			<div class="slide">
+				<img src="images/slide/one.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/two.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/three.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/four.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/five.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/six.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/seven.jpg" alt="" class="img-responsive" />
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="main-footer">
+
+		<div class="container-body">
+
+			<!-- Footer Column one (information) -->
+			<div class="colum1">
+				<h1>About Me</h1>
+				<p>Nhóm 23 LTW</p>
+
+
+			</div>
+
+			<!-- Footer Column two (social links) -->
+			<div class="colum2">
+				<h1>đường liên kết mạng xã hội</h1>
+
+
+				<div class="row">
+					<a href="https://www.facebook.com/hao.thi.773776/" target="_blank"><img
+							src="/images/footer/facebook.png" /></a>
+					<p>Facebook</p>
+				</div>
+				</div>
+
+				<div class="row">
+					<a href="https://www.facebook.com/profile.php?id=100070631555679" target="_blank"><img
+							src="/images/footer/facebook.png" /></a>
+					<p>Facebook</p>
+				</div>
+				</div>
+
+				<div class="row">
+					<a href="https://www.facebook.com/NguyenLA.Astral" target="_blank"><img
+							src="/images/footer/facebook.png" /></a>
+					<p>Facebook</p>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Container Footer -->
+		<div class="container-footer">
+			<div class="footer">
+
+				<div class="information">
+					<a>Đặt phòng khách sạn</a>
+				</div>
+			</div>
+
+		</div>
+
+	</footer>
+
+	<!-- Reference Javascript and local files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+
+	<script th:src="@{scripts/parallax.min.js}"></script>
+	<script th:src="@{scripts/slick.min.js}"></script>
+	<script th:src="@{scripts/home.js}"></script>
+
+</body>
+
+</html>
